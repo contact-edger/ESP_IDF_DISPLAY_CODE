@@ -1,0 +1,34 @@
+; PlatformIO Project Configuration File (Alternative to ESP-IDF)
+; 
+; If you prefer using PlatformIO instead of ESP-IDF, rename this file to platformio.ini
+; and use PlatformIO commands instead.
+;
+; Build:   pio run
+; Upload:  pio run --target upload
+; Monitor: pio device monitor
+
+[env:esp32dev]
+platform = espressif32
+board = esp32dev
+framework = arduino
+
+; Serial Monitor Settings
+monitor_speed = 115200
+monitor_filters = 
+    esp32_exception_decoder
+    colorize
+
+; Build flags
+build_flags = 
+    -DARDUINO_USB_CDC_ON_BOOT=0
+
+; Upload settings (change to your COM port)
+upload_port = COM3
+upload_speed = 921600
+
+; Monitor settings
+monitor_port = COM3
+
+; Dependencies
+lib_deps = 
+    ; Add any additional libraries here if needed
